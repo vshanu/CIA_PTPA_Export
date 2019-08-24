@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="jumbotron" >
+    <div class="panel panel-primary">
+      <div class="panel-heading">Player Management</div>
+      <div class="panel-body">
+          <form id="myForm1" #myForm1="ngForm" >
+              <div>
+                <h3>Add Players</h3>
+                <div class="form-group row">
+                  <div class="col-md">
+                    <label for="exampleSelectPlayer">Player ID</label>
+                    <input name="selectPlayerID" type="text" class="form-control" [(ngModel)] = "selectedPlayerId" id="exampleInputEmail1" (change)="selected1()" placeholder="Enter Player Id" style="width: 150px;">             
+                  </div>
+                  <div class="col-md">
+                    <label for="exampleSelectPlayer">Player Name</label>
+                    <input name="selectPlayerName" type="text" class="form-control" [(ngModel)] = "selectedPlayerName" id="exampleInputEmail1" (change)="selected2()" placeholder="Enter Player Name" style="width: 150px;">
+                    
+                  </div>
+                  <div class="col-md">
+                    <label for="exampleSelectPlayer">Mentor</label>
+                    <select name="selectMentor" class="form-control" [(ngModel)]="selectedMentor" (change)="selectedPlayerMentor()" style="width: 150px;">
+                      <option *ngFor="let itemMentor of dataMentors" [ngValue]="itemMentor">{{itemMentor.FirstName}}</option>
+                    </select>
+                  </div>
+                </div>  
+                <button type="submit" class="btn btn-primary float-right" (click)= "AddPlayerSubmit()">Submit</button>          
+              </div>
+
+            </form>
+            <form id="myForm2">
+              <div>
+                  <h3>Delete Players</h3>
+                  <div class="form-group row">
+                    <div class="col-md">
+                      <label for="exampleSelectPlayer">Player ID</label>
+                      <select name="selectMonth" class="form-control" [(ngModel)]="selectdeletePlayer" (change)="deletePlayerFn()" style="width: 200px;">
+                        <option *ngFor="let item of dataId " [ngValue]="item">{{item.playerName}}</option>
+                      </select>             
+                    </div>                   
+                  </div>   
+                  <button type="submit" class="btn btn-primary float-right" (click)= "DeletePlayerSubmit()">Submit</button>         
+                </div>
+            </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <div class="jumbotron" >
+      <div class="panel panel-primary">
+        <div class="panel-heading"> Mentors Management</div>
+        <div class="panel-body">
+            <form id="myForm3">
+                <div>
+                  <h3>Add Mentors</h3>
+                  <div class="form-group row">
+                    <div class="col-md">
+                      <label for="exampleSelectPlayer">First Name</label>
+                      <input name="selectMentorFname" type="text" class="form-control" id="selectMentorFname"  [(ngModel)] = "selectedMentorFname" (change)="selectedMentorFnameFn()" placeholder="Enter email" style="width: 200px;">             
+                    </div>
+                    <div class="col-md">
+                      <label for="exampleSelectPlayer">Last Name</label>
+                      <input name= "selectMentorLname" type="text" class="form-control" id="selectMentorLname"  [(ngModel)] = "selectedMentorLname" (change)= "selectedMentorLnameFn()" placeholder="Enter email" style="width: 200px;">
+                    </div>
+                    <div class="col-md">
+                      <label for="exampleSelectPlayer">Mentor Id</label>
+                      <input name= "selectMentorId" type="text" class="form-control" id="selectMentorId"  [(ngModel)] = "selectedMentorId" (change)= "selectedMentorIdFn()" placeholder="Enter email" style="width: 200px;">
+                    </div>
+                  </div>    
+                  <button type="submit" class="btn btn-primary float-right" (click)= "AddMentorSubmit()">Submit</button>        
+                </div>
+              </form>
+              <form id="myForm4">
+                <div>
+                    <h3>Delete Mentors</h3>
+                    <div class="form-group row">
+                      <div class="col-md">
+                        <label for="exampleSelectPlayer">Mentor</label>
+                        <select name="selectMentor" class="form-control" [(ngModel)]="selectedMentors" (change)="selected3()" style="width: 150px;">
+                          <option *ngFor="let itemMentor of dataMentors" [ngValue]="itemMentor">{{itemMentor.FirstName}}</option>
+                        </select>
+                      </div>
+                    </div>   
+                    <button type="submit" class="btn btn-primary float-right" (click)= "DeleteMentorSubmit()">Submit</button>         
+                  </div>
+              </form>
+  
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,125 @@
+<div class="container">
+  <div class="jumbotron" style="height: 700px;">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Detalles del Equipo</div>
+      <div class="panel-body">
+        <div class="col-md-6">
+          <form id="playerForm" #playerForm="ngForm">
+            <div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label for="exampleSelectPlayer">Mes</label>
+                  <select required name="selectMonth" class="form-control" [(ngModel)]="selectedLevel" style="width: 150px;">
+                    <option *ngFor="let item of data" [ngValue]="item">{{item.name}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label for="exampleSelectPlayer">Semena</label>
+                  <select required name="selectWeek" class="form-control" [(ngModel)]="selectedWeek" (change)="selected()"
+                    style="width: 150px;">
+                    <option *ngFor="let itemWeek of dataWeek" [ngValue]="itemWeek">{{itemWeek.name}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="exampleSelectPlayer">Nombres</label>
+                <select required name="selectNombres" class="form-control" [(ngModel)]="selectedNombres">
+                  <option *ngFor="let itemNombres of dataNombres" [ngValue]="itemNombres">{{itemNombres.playerNombres}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="exampleSelectPlayer">Asistencia</label>
+                <select required name="selectedAsist" class="form-control" [(ngModel)]="selectedAsist">
+                  <option *ngFor="let itemAssist of dataAssist" [ngValue]="itemAssist">{{itemAssist.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="exampleSelectPlayer">Conducta</label>
+                <select required name="selectedConduct" class="form-control" [(ngModel)]="selectedConduct">
+                  <option *ngFor="let itemConduct of dataConduct" [ngValue]="itemConduct">{{itemConduct.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="exampleSelectPlayer">Cuantos veces se comen 3 veces/día esta semana?</label>
+                <select required name="selectedFisico" class="form-control" [(ngModel)]="selectedFisico">
+                  <option *ngFor="let itemFisico of dataFisico" [ngValue]="itemFisico">{{itemFisico.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="exampleSelectPlayer">
+                  Asistencia de Escuela
+                </label>
+                <select required name="selectedVest" class="form-control" [(ngModel)]="selectedVest">
+                  <option *ngFor="let itemVest of dataVest" [ngValue]="itemVest">{{itemVest.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="exampleSelectPlayer">Como Se Sienten Esta Semana?</label>
+                <select required name="selectedAcad" class="form-control" [(ngModel)]="selectedAcad">
+                  <option *ngFor="let itemAcad of dataAcad" [ngValue]="itemAcad">{{itemAcad.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12">
+                  <label for="exampleSelectPlayer">Horas A Mentorear</label>
+                  <select required name="selectedHoras" class="form-control" [(ngModel)]="selectedHoras">
+                    <option *ngFor="let itemHoras of dataHoras" [ngValue]="itemHoras">{{itemHoras.name}}</option>
+                  </select>
+                </div>
+              </div> 
+              <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="exampleSelectPlayer">Astito La Liga</label>
+                    <select required name="selectedAstito" class="form-control" [(ngModel)]="selectedAstito">
+                      <option *ngFor="let itemAstito of dataAstito" [ngValue]="itemAstito">{{itemAstito.name}}</option>
+                    </select>
+                  </div>
+                </div>
+            <button type="submit" class="btn btn-primary" (click)="addPlayer(playerForm)" [disabled]="!playerForm.form.valid">Enviar</button>
+          </form>
+        </div>
+        <!--===============================Right Half=========================================-->
+        <div class="col-md-6">
+          <div class="well well-lg" style="margin-top: 55px;">
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label>Equipo Notificaciones!</label>
+                <html>
+
+                <head>
+                  <title>My Verse of the Day</title>
+                </head>
+
+                <body>
+                  <div style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+                    <iframe frameborder="0" width="100%" height="315px" scrolling="no"
+                      src="../../../assets/WebPages_Template/Team_Notifications_Template.html">View Verse of the
+                      day</iframe>
+                  </div>
+                </body>
+
+                </html>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
